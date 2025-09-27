@@ -49,8 +49,6 @@ jobs:
           NODE_ENV: production
         run: pnpm run build
 
-      - name: Export static site
-        run: pnpm exec next export
 
       - name: Add .nojekyll (disable Jekyll processing)
         run: touch out/.nojekyll
