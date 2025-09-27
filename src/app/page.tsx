@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import {
   CheckCircle2,
   Shield,
@@ -11,7 +12,6 @@ import {
   MapPin,
   ArrowRight,
   CalendarDays,
-  BadgeCheck,
   GraduationCap,
   Menu,
   X,
@@ -113,10 +113,13 @@ function TopNav() {
     >
       <Section className="flex items-center justify-between py-4" id="navbar">
         <a href="#" className="flex items-center gap-2">
-          <img 
+          <Image
             src="https://static.wixstatic.com/media/069674_cc399fd62a2343208b246797537bbd56~mv2.png/v1/fill/w_188,h_85,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/LOGO%20BLANC%20trans.png"
             alt="Flyness Training"
+            width={188}
+            height={85}
             className="h-8 w-auto"
+            priority
           />
         </a>
         <nav className="hidden md:block">
@@ -137,7 +140,7 @@ function TopNav() {
             <a href="#contact">Nous contacter</a>
           </Button>
           <Button asChild style={{ backgroundColor: BRAND.primary, color: "white" }}>
-            <a href="#inscription">S'inscrire</a>
+            <a href="#inscription">S’inscrire</a>
           </Button>
         </div>
         <button
@@ -161,7 +164,7 @@ function TopNav() {
                   <a href="#contact">Nous contacter</a>
                 </Button>
                 <Button asChild size="sm" style={{ backgroundColor: BRAND.primary, color: "white" }}>
-                  <a href="#inscription">S'inscrire</a>
+                  <a href="#inscription">S’inscrire</a>
                 </Button>
               </div>
             </div>
@@ -202,11 +205,11 @@ function Hero() {
             Votre réussite dans le secteur aéroportuaire
           </p>
           <p className="mt-4 text-base md:text-lg opacity-90 max-w-xl italic">
-            Flyness Training vous propose plusieurs formations dans le secteur aéroportuaire tels que la sûreté, la sécurité et l'accueil, etc… dans lesquels vous pourrez vous former rapidement !
+            Flyness Training vous propose plusieurs formations dans le secteur aéroportuaire tels que la sûreté, la sécurité et l’accueil, etc… dans lesquels vous pourrez vous former rapidement !
           </p>
           <div className="mt-6 flex flex-col sm:flex-row gap-4">
             <Button asChild size="lg" style={{ backgroundColor: BRAND.primary, color: "white" }} className="shadow-lg">
-              <a href="#inscription">S'inscrire maintenant</a>
+              <a href="#inscription">S&apos;inscrire maintenant</a>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-black backdrop-blur-sm">
               <a href="#formations">Voir les formations</a>
@@ -218,7 +221,7 @@ function Hero() {
             <Stat kpi="2019" label="Expérience centre" />
           </div>
           <p className="text-xs opacity-80 mt-2">
-            *Indicateur à titre d'exemple – remplacez par vos données officielles.
+            *Indicateur à titre d&apos;exemple – remplacez par vos données officielles.
           </p>
         </div>
         <div>
@@ -243,7 +246,7 @@ function Hero() {
             </CardContent>
             <CardFooter className="justify-between">
               <p className="text-xs opacity-60">
-                En soumettant ce formulaire vous acceptez d'être contacté(e).
+                En soumettant ce formulaire vous acceptez d&apos;être contacté(e).
               </p>
               <Button style={{ backgroundColor: BRAND.primary }}>Envoyer</Button>
             </CardFooter>
@@ -459,7 +462,7 @@ function ProgramCard({ program }: { program: Program }) {
     <Card className="group hover:shadow-xl transition-shadow">
       <CardHeader>
         <div className="relative h-48 w-full mb-4 rounded-lg overflow-hidden">
-          <img
+          <Image
             src={program.image
               ? program.image
               : program.slug === "tfp-asa-t7" || program.slug === "tfp-asa-t10"
@@ -469,7 +472,9 @@ function ProgramCard({ program }: { program: Program }) {
               : "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
             }
             alt={program.title}
-            className="w-full h-full object-cover"
+            fill
+            sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
+            className="object-cover"
           />
           <div className="absolute top-2 right-2">
             <Badge>{program.badge}</Badge>
@@ -496,7 +501,7 @@ function ProgramCard({ program }: { program: Program }) {
       </CardContent>
       <CardFooter className="justify-between">
         <Button asChild size="sm" style={{ backgroundColor: BRAND.primary, color: "white" }}>
-          <a href="#inscription">S'inscrire</a>
+          <a href="#inscription">S&apos;inscrire</a>
         </Button>
         <a
           href="#contact"
@@ -577,18 +582,20 @@ function Recruitment() {
               Recrutement
             </h3>
             <p className="mt-6 max-w-md text-black">
-              Les aéroports de Roissy CDG & d'Orly recrutent des personnes sérieuses et motivées souhaitant travailler dans l'univers aéroportuaire en tant qu'agent de sûreté aéroportuaire.
+              Les aéroports de Roissy CDG & d&apos;Orly recrutent des personnes sérieuses et motivées souhaitant travailler dans l&apos;univers aéroportuaire en tant qu&apos;agent de sûreté aéroportuaire.
             </p>
             <Button className="mt-8" size="lg" style={{ backgroundColor: BRAND.primary, color: "white" }}>
               Postuler
             </Button>
           </CardContent>
         </Card>
-        <div data-testid="recruitment-right" className="relative">
-          <img
+        <div data-testid="recruitment-right" className="relative min-h-[300px]">
+          <Image
             src="https://images.unsplash.com/photo-1556388158-158ea5ccacbd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
             alt="Formation sûreté aéroportuaire"
-            className="w-full h-full object-cover rounded-xl shadow-xl"
+            fill
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            className="object-cover rounded-xl shadow-xl"
           />
           <div className="absolute inset-0 rounded-xl bg-black/15" />
         </div>
@@ -609,11 +616,6 @@ function WhyUs() {
       icon: <CalendarDays className="h-5 w-5" />,
       title: "Sessions fréquentes",
       text: "Calendrier ouvert toute l'année",
-    },
-    {
-      icon: <Shield className="h-5 w-5" />,
-      title: "Conformité complète",
-      text: "Respect des exigences T7/T10 & périodiques",
     },
     {
       icon: <PlaneTakeoff className="h-5 w-5" />,
@@ -695,7 +697,7 @@ function Testimonials() {
     {
       name: "Fadoua",
       text:
-        "Centre sérieux et orienté emploi. J'ai trouvé un poste en moins d'un mois après la formation APMR.",
+        "Centre sérieux et orienté emploi. J’ai trouvé un poste en moins d’un mois après la formation APMR.",
       avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b5bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80",
     },
     {
@@ -713,9 +715,11 @@ function Testimonials() {
           <Card key={i}>
             <CardHeader>
               <div className="flex items-center gap-3">
-                <img
+                <Image
                   src={x.avatar}
                   alt={x.name}
+                  width={48}
+                  height={48}
                   className="w-12 h-12 rounded-full object-cover"
                 />
                 <CardTitle className="text-base">{x.name}</CardTitle>
@@ -752,13 +756,13 @@ function FAQ() {
           <AccordionItem value="item-2">
             <AccordionTrigger>Quels sont les prérequis pour APMR ?</AccordionTrigger>
             <AccordionContent>
-              Savoir lire et écrire le français et disposer d'un extrait de casier judiciaire B3 vierge. Aptitudes relationnelles et sens du service appréciés.
+              Savoir lire et écrire le français et disposer d&apos;un extrait de casier judiciaire B3 vierge. Aptitudes relationnelles et sens du service appréciés.
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
             <AccordionTrigger>Quelle différence entre T7 et T10 ?</AccordionTrigger>
             <AccordionContent>
-              Le T10 inclut le module FRET et permet de travailler sur l'ensemble des postes d'agent de sûreté, quand le T7 exclut le FRET.
+              Le T10 inclut le module FRET et permet de travailler sur l&apos;ensemble des postes d&apos;agent de sûreté, quand le T7 exclut le FRET.
             </AccordionContent>
           </AccordionItem>
         </Accordion>
@@ -800,7 +804,7 @@ function Footer() {
       <Section id="contact" className="py-10 grid md:grid-cols-3 gap-6">
         <div>
           <div className="flex items-center gap-2 mb-2">
-            <img 
+            <Image 
               src="https://static.wixstatic.com/media/069674_cc399fd62a2343208b246797537bbd56~mv2.png/v1/fill/w_188,h_85,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/LOGO%20BLANC%20trans.png"
               alt="Flyness Training"
               className="h-6 w-auto"
@@ -904,3 +908,5 @@ export default function FlynessLanding() {
     </div>
   );
 }
+
+// Test hero-bg déplacé dans useEffect côté client
