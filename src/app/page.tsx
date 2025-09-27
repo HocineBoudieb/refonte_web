@@ -834,6 +834,7 @@ function Footer() {
           </div>
           <div className="flex items-center gap-2">
             <MapPin className="h-4 w-4" />23 allée des Impressionnistes, 93420 Villepinte
+            
           </div>
         </div>
         <div className="text-xs opacity-70">
