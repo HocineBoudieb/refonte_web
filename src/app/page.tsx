@@ -807,6 +807,8 @@ function Footer() {
             <Image 
               src="https://static.wixstatic.com/media/069674_cc399fd62a2343208b246797537bbd56~mv2.png/v1/fill/w_188,h_85,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/LOGO%20BLANC%20trans.png"
               alt="Flyness Training"
+              width={188}
+              height={85}
               className="h-6 w-auto"
             />
           </div>
