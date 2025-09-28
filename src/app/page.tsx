@@ -501,10 +501,10 @@ function ProgramCard({ program }: { program: Program }) {
       </CardContent>
       <CardFooter className="justify-between">
         <Button asChild size="sm" style={{ backgroundColor: BRAND.primary, color: "white" }}>
-          <a href="#inscription">S&apos;inscrire</a>
+          <a href={`/inscription/${program.slug}`}>S&apos;inscrire</a>
         </Button>
         <a
-          href="#contact"
+          href={`/formation/${program.slug}`}
           className="text-sm opacity-80 hover:opacity-100 inline-flex items-center gap-1"
         >
           Brochure <ArrowRight className="h-4 w-4" />
